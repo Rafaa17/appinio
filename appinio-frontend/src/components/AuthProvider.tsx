@@ -2,7 +2,6 @@
 
 import React, { useMemo } from "react";
 import { AnimationType, DialogType, usePopup } from "react-custom-popup";
-import { useNavigate } from "react-router-dom";
 import { AppinioApi } from "../api/AppinioApi";
 import { AuthContext } from "../context/auth.context";
 import { useLocalStorage } from "../hooks/useLocalStorage";

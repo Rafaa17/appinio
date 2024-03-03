@@ -11,7 +11,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node dist/src/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -20,7 +20,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typecheck": "tsc --noEmit",
     "generate-api-doc": "nest start -c ./nest-cli-openapi.json",
-    "generate-api-client": "NODE_ENV=development npm run generate-api-doc && openapi-generator-cli generate -i ./output/openapi.json -c api.json --generator-name typescript-axios -o ./out/appinio-app-api"
+    "generate-api-client": "NODE_ENV=development npm run generate-api-doc && openapi-generator-cli generate -i ./output/openapi.json -c api.json --generator-name typescript-axios -o ./out/appinio-app-api",
+    "prisma-init": "prisma migrate dev --name init"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

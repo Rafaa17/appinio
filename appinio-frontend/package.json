@@ -10,7 +10,7 @@
     "@types/node": "^16.18.86",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
-    "appinio-api": "file:../appinio-backend/out/appinio-app-api",
+    "appinio-api": "file:appinio-app-api",
     "axios": "^1.6.1",
     "react": "^18.2.0",
     "react-custom-popup": "^1.2.1",
@@ -20,10 +20,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_API_URL=http://localhost:8080 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "get-latest-appinio-api": "cp -r ../appinio-backend/out/appinio-app-api ."
   },
   "eslintConfig": {
     "extends": [

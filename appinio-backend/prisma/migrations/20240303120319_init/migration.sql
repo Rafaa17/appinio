@@ -5,6 +5,8 @@ CREATE TABLE `User` (
     `username` VARCHAR(191) NOT NULL,
     `password` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
 
     UNIQUE INDEX `User_uuid_key`(`uuid`),
     UNIQUE INDEX `User_username_key`(`username`),
@@ -16,8 +18,12 @@ CREATE TABLE `User` (
 CREATE TABLE `Post` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
-    `content` VARCHAR(191) NOT NULL,
+    `content` LONGTEXT NOT NULL,
+    `summary` LONGTEXT NOT NULL,
+    `insights` LONGTEXT NOT NULL,
     `userId` INTEGER NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
 
     UNIQUE INDEX `Post_uuid_key`(`uuid`),
     PRIMARY KEY (`id`)

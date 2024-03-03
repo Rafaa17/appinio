@@ -1,3 +1,0 @@
--- AlterTable
-ALTER TABLE `Post` MODIFY `content` LONGTEXT NOT NULL,
-    MODIFY `summary` LONGTEXT NOT NULL;

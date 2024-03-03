@@ -1,0 +1,43 @@
+version: "3"
+
+tasks:
+  install-backend-deps:
+    dir: appinio-backend
+    cmds:
+    - npm i
+
+  install-frontend-deps:
+    dir: appinio-frontend
+    cmds:
+    - npm i
+
+  run-db:
+    dir: appinio-backend
+    cmds:
+    - docker-compose up -d
+
+  shape-db:
+    dir: appinio-backend
+    cmds:
+    - npm run prisma-init
+
+  run-backend:
+    dir: appinio-backend
+    cmds:
+    - npm run start:dev
+
+  run-frontend:
+    dir: appinio-frontend
+    cmds:
+    - npm start
+
+  shutdown-db:
+    dir: appinio-backend
+    cmds:
+    - docker-compose down
+
+  install-deps:
+    cmds:
+    - task: install-backend-deps
+    - task: install-frontend-deps
+

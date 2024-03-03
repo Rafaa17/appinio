@@ -1,22 +1,24 @@
 import { DefaultApi } from "appinio-api";
 import axios from "axios";
 
+const HOST = // @ts-ignore
+  window?.API_URL
+    ? // @ts-ignore
+      window?.API_URL
+    : process.env.REACT_APP_API_URL ?? "https://appinio.thedevbar.com/api";
+
 class Appinio {
   public readonly api: DefaultApi;
 
   constructor() {
-    // this.axios = axios.create({});
-
     this.api = new DefaultApi(
       {
         isJsonMime: () => true,
       },
-      "http://localhost:8000",
+      HOST,
       // @ts-ignore
-      axios
+      axios.create()
     );
-
-    console.log(this.api);
   }
 }
 

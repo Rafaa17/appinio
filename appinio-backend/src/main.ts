@@ -2,7 +2,7 @@ import { Logger } from '@nestjs/common';
 import { SwaggerModule } from '@nestjs/swagger';
 import { bootstrap } from './bootstrap';
 
-const port = 8000;
+const port = 8080;
 
 async function main() {
   const { app, document } = await bootstrap();
