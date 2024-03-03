@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `Post` MODIFY `content` VARCHAR(300) NOT NULL,
+    MODIFY `insights` VARCHAR(300) NOT NULL,
+    MODIFY `summary` VARCHAR(300) NOT NULL;

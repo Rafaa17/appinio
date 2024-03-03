@@ -1,0 +1,9 @@
+.go-to-register-container,
+.go-to-login-container {
+  margin: 30px;
+  font-size: small;
+}
+
+a {
+  color: lightblue;
+}

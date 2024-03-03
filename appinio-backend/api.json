@@ -1,0 +1,13 @@
+{
+  "npmName": "appinio-api",
+  "npmVersion": "1.0.0",
+  "snapshot": false,
+  "modelPropertyNaming": "original",
+  "client_config": {
+    "typescript-axios": {
+      "supportsES6": true,
+      "stringEnums": true,
+      "enumNameSuffix": "test"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.add-new-post-btn {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+.logout-btn {
+  position: absolute;
+  left: 30px;
+  top: 80px;
+}
+
+.posts-container {
+}
+
+.post-content {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
