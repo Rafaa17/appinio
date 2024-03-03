@@ -12,12 +12,9 @@ services:
       MYSQL_PASSWORD: 'password'
       # Password for root access
       MYSQL_ROOT_PASSWORD: 'password'
+    platform: linux/amd64
     ports:
       # <Port exposed> : < MySQL Port running inside container>
       - '3306:3306'
     volumes:
-      - my-db:/var/lib/mysql
       - ./database:/docker-entrypoint-initdb.d
-
-volumes:
-  my-db:
