@@ -18,7 +18,7 @@ Welcome to Appinio, an innovative application with backend and frontend componen
 
 Before you begin, make sure you have the following dependencies installed:
 
-- [Node.js](https://nodejs.org/) (required for npm)
+- [Node.js](https://nodejs.org/) version 18.15.0 (you can use `nvm` for version management)
 - [Taskfile](https://taskfile.dev/#/installation) (installed via npm)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (Ensure Docker Desktop is installed and running for hosting the MySQL database in a Docker container)
 
@@ -66,6 +66,11 @@ To access the database through a client, use the following credentials:
 ## Step 6: Backend Setup
 
 ### 6.1 Install Backend Dependencies
+
+```bash
+# optional - if using nvm
+nvm use
+```
 
 ```bash
 task install-backend-deps
