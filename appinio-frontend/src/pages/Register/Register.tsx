@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 
 export default function RegisterPage() {
-  const { register } = useAuth();
+  const { register, user } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/", { replace: true });
+    }
+  }, [navigate, user]);
+
   return (
     <div>
       <h2>Register</h2>

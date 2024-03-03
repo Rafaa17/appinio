@@ -8,6 +8,7 @@ Before you begin, make sure you have the following dependencies installed:
 
 - [Node.js](https://nodejs.org/) (required for npm)
 - [Taskfile](https://taskfile.dev/#/installation) (installed via npm)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) (Ensure Docker Desktop is installed and running for hosting the MySQL database in a Docker container)
 
 ## Step 2: Clone the Repository
 
@@ -34,7 +35,9 @@ Replace `your_openai_api_key_here` with your actual OpenAI API key.
 
 ## Step 5: Database Setup
 
-### 5.1 Run Database
+### 5.1 Start Database (MySQL in Docker)
+
+During this step, a Docker container will be started to host a MySQL instance.
 
 ```bash
 task run-db
@@ -45,6 +48,14 @@ task run-db
 ```bash
 task shape-db
 ```
+
+During this step, Prisma applies the initial migration to create tables.
+
+To access the database through a client, use the following credentials:
+
+- **Username:** user
+- **Password:** password
+- **Database:** db
 
 ## Step 6: Backend Setup
 
@@ -60,6 +71,8 @@ task install-backend-deps
 task run-backend
 ```
 
+The backend will be accessible at http://localhost:8080, and the OpenAPI Swagger documentation is available at http://localhost:8080/api.
+
 ## Step 7: Frontend Setup
 
 ### 7.1 Frontend Installation
@@ -73,6 +86,8 @@ task install-frontend
 ```bash
 task run-frontend
 ```
+
+The frontend will be accessible at http://localhost:3000.
 
 ## CI/CD Workflows
 

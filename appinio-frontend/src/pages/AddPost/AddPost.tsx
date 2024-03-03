@@ -5,12 +5,14 @@ import { DialogType, usePopup } from "react-custom-popup";
 import { AppinioApi } from "../../api/AppinioApi";
 import AddPost from "../../components/AddPostForm/AddPost";
 import { useAuth } from "../../hooks/useAuth";
+import { useLoading } from "../../hooks/useLoading";
 
 export default function AddPostPage() {
   const { user, logout } = useAuth();
   const [summary, setSummary] = useState<string>();
   const [insights, setInsights] = useState<string>();
   const { showAlert } = usePopup();
+  const { showLoading } = useLoading();
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -20,6 +22,7 @@ export default function AddPostPage() {
 
   const handleSummarize = async (content: string) => {
     try {
+      showLoading(true);
       const response = await AppinioApi.api.summarizeTextFromPostsController(
         {
           content,
@@ -34,11 +37,14 @@ export default function AddPostPage() {
     } catch (err) {
       showAlert({ type: DialogType.DANGER, text: "An error occured" });
       return;
+    } finally {
+      showLoading(false);
     }
   };
 
   const handleCreate = async (content: string) => {
     try {
+      showLoading(true);
       await AppinioApi.api.createFromPostsController(
         {
           insights: insights!,
@@ -51,6 +57,8 @@ export default function AddPostPage() {
       showAlert({ type: DialogType.SUCCESS, text: "Post Created!" });
     } catch (e) {
       showAlert({ type: DialogType.DANGER, text: "An error occured" });
+    } finally {
+      showLoading(false);
     }
   };
 
