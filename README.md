@@ -17,7 +17,7 @@ Before you begin, make sure you have the following dependencies installed:
 ## Step 2: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/appinio.git
+git clone https://github.com/Rafaa17/appinio.git
 cd appinio
 ```
 
