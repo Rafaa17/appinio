@@ -15,7 +15,7 @@ tasks:
   run-db:
     dir: appinio-backend
     cmds:
-    - docker-compose up -d
+    - docker-compose up -d db
 
   shape-db:
     dir: appinio-backend
