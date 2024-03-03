@@ -73,6 +73,14 @@ task run-backend
 
 The backend will be accessible at http://localhost:8080, and the OpenAPI Swagger documentation is available at http://localhost:8080/api.
 
+### 6.3 Run Backend Tests
+
+To run backend tests, use the following command:
+
+```bash
+task run-backend-tests
+```
+
 ## Step 7: Frontend Setup
 
 ### 7.1 Frontend Installation
@@ -87,10 +95,14 @@ task install-frontend
 task run-frontend
 ```
 
+### 7.3 Run Frontend Tests
+
+To run frontend tests, use the following command:
+
+```bash
+task run-frontend-tests
+```
+
 The frontend will be accessible at http://localhost:3000.
-
-## CI/CD Workflows
-
-In the `workflows` directory, GitHub Actions workflows automate the deployment of both backend and frontend components. These workflows are tailored for self-customized CI/CD environments.
 
 Appinio is also available at https://appinio.thedevbar.com running on my Kubernetes internal cluster.

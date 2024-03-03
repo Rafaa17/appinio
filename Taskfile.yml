@@ -26,10 +26,20 @@ tasks:
     cmds:
     - npm run start:dev
 
+  run-backend-tests:
+    dir: appinio-backend
+    cmds:
+    - npm run test
+
   run-frontend:
     dir: appinio-frontend
     cmds:
     - npm start
+
+  run-frontend-tests:
+    dir: appinio-frontend
+    cmds:
+    - npm run test
 
   shutdown-db:
     dir: appinio-backend
