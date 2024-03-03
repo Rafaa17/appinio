@@ -2,6 +2,10 @@
 
 Welcome to Appinio, an innovative application with backend and frontend components. This tutorial will guide you through the setup process, including installing dependencies, configuring the environment, and running the application.
 
+## Usage
+
+[Demo](https://github.com/Rafaa17/appinio/assets/26599209/7df75d15-d35a-42de-b889-f882c5a12faa)
+
 ## Step 1: Prerequisites
 
 Before you begin, make sure you have the following dependencies installed:
