@@ -2,6 +2,14 @@
 
 Welcome to Appinio, an innovative application with backend and frontend components. This tutorial will guide you through the setup process, including installing dependencies, configuring the environment, and running the application.
 
+## Assumptions
+
+- We always want to reach to OpenAI to summarize the content, thus is always an `OPENAI_API_KEY` in place.
+- Since content can be anything, I am treating it a just a plain string and passing it to OpenAI API to get string summary and insights.
+- No post can be created without summary or insights.
+- We want some basic authorization.
+- Users need to be logged in in order to be able to see their posts or create a new one.
+
 ## Usage
 
 [Demo](https://github.com/Rafaa17/appinio/assets/26599209/7df75d15-d35a-42de-b889-f882c5a12faa)
@@ -47,12 +55,6 @@ During this step, a Docker container will be started to host a MySQL instance.
 task run-db
 ```
 
-### 5.2 Shape Database
-
-```bash
-task shape-db
-```
-
 During this step, Prisma applies the initial migration to create tables.
 
 To access the database through a client, use the following credentials:
@@ -69,13 +71,11 @@ To access the database through a client, use the following credentials:
 task install-backend-deps
 ```
 
-### 6.2 Run Backend
+### 6.2 Shape Database - init migration
 
 ```bash
-task run-backend
+task shape-db
 ```
-
-The backend will be accessible at http://localhost:8080, and the OpenAPI Swagger documentation is available at http://localhost:8080/api.
 
 ### 6.3 Run Backend Tests
 
@@ -85,21 +85,23 @@ To run backend tests, use the following command:
 task run-backend-tests
 ```
 
+### 6.4 Run Backend
+
+```bash
+task run-backend
+```
+
+The backend will be accessible at http://localhost:8080, and the OpenAPI Swagger documentation is available at http://localhost:8080/api.
+
 ## Step 7: Frontend Setup
 
 ### 7.1 Frontend Installation
 
 ```bash
-task install-frontend
+task install-frontend-deps
 ```
 
-### 7.2 Run Frontend
-
-```bash
-task run-frontend
-```
-
-### 7.3 Run Frontend Tests
+### 7.2 Run Frontend Tests
 
 To run frontend tests, use the following command:
 
@@ -107,12 +109,18 @@ To run frontend tests, use the following command:
 task run-frontend-tests
 ```
 
+### 7.3 Run Frontend
+
+```bash
+task run-frontend
+```
+
 ## Step 8: Using the App
 
 1. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
-2. On the login page click on the "Register" button.
+2. On the login page click on the `Register` button.
 3. Enter a simple username, password, and email in the registration form.
-4. Click on the "Register" button to create your account.
+4. Click on the `Register` button to create your account.
 5. If everything went smooth you should be in the Home page where created posts appear.
 6. Click on `Add New Post` button on the top left.
 7. Enter some content in the box and press summarize.
