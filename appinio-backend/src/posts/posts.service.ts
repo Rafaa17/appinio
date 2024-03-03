@@ -25,8 +25,8 @@ export class PostsService {
   create(createPostDto: CreatePostRequestDto, userId: number) {
     return this.postsDatasource.create({
       content: createPostDto.content,
-      summary: createPostDto.summary,
-      insights: createPostDto.insights,
+      summary: createPostDto.summary.toString(), // just to be sure in case chatgpt does not return string
+      insights: createPostDto.insights.toString(), // just to be sure in case chatgpt does not return string
       userId,
       uuid: this.utilsService.generateUuid(),
     });
