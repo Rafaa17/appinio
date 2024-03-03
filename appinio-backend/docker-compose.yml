@@ -18,3 +18,26 @@ services:
       - '3306:3306'
     volumes:
       - ./database:/docker-entrypoint-initdb.d
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    container_name: appinio-backend
+    environment:
+      - DATABASE_URL=mysql://user:password@appinio-db:3306/db
+    stdin_open: true
+    command:
+      - /bin/bash
+      - -c
+      - |
+        npm run prisma-init
+        npm run start:dev
+    ports:
+      - '8080:8080'
+    links:
+      - db
+    depends_on:
+      - db
+    volumes:
+      - ./src:/app/src

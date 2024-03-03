@@ -1,6 +1,7 @@
 version: "3"
 
 tasks:
+
   install-backend-deps:
     dir: appinio-backend
     cmds:
@@ -51,3 +52,22 @@ tasks:
     - task: install-backend-deps
     - task: install-frontend-deps
 
+  up-frontend:
+    dir: appinio-frontend
+    cmds:
+    - docker-compose up -d
+
+  down-frontend:
+    dir: appinio-frontend
+    cmds:
+    - docker-compose down
+
+  up-backend:
+    dir: appinio-backend
+    cmds:
+    - docker-compose up -d
+
+  down-backend:
+    dir: appinio-backend
+    cmds:
+    - docker-compose down

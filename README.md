@@ -10,7 +10,9 @@ Welcome to Appinio, an innovative application with backend and frontend componen
 - We want some basic authorization.
 - Users need to be logged in in order to be able to see their posts or create a new one.
 
-## Usage
+### Appinio is also available at https://appinio.thedevbar.com running on my Kubernetes internal cluster.
+
+### Usage
 
 [Demo](https://github.com/Rafaa17/appinio/assets/26599209/7df75d15-d35a-42de-b889-f882c5a12faa)
 
@@ -59,6 +61,14 @@ To access the database through a client, use the following credentials:
 
 ## Step 5: Backend Setup
 
+### One line boot through Docker
+
+```bash
+task up-backend
+```
+
+or locally
+
 ### 5.1 Install Backend Dependencies
 
 ```bash
@@ -93,6 +103,14 @@ task run-backend
 The backend will be accessible at http://localhost:8080, and the OpenAPI Swagger documentation is available at http://localhost:8080/api.
 
 ## Step 6: Frontend Setup
+
+### One line boot through Docker
+
+```bash
+task up-frontend
+```
+
+or locally
 
 ### 6.1 Frontend Installation
 
@@ -130,5 +148,3 @@ task run-frontend
 12. You can then log in again, using the registered credentials.
 
 The frontend will be accessible at http://localhost:3000.
-
-Appinio is also available at https://appinio.thedevbar.com running on my Kubernetes internal cluster.
