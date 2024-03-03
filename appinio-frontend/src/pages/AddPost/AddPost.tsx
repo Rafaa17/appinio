@@ -7,6 +7,8 @@ import AddPost from "../../components/AddPostForm/AddPost";
 import { useAuth } from "../../hooks/useAuth";
 import { useLoading } from "../../hooks/useLoading";
 
+import "./AddPost.css";
+
 export default function AddPostPage() {
   const { user, logout } = useAuth();
   const [summary, setSummary] = useState<string>();
@@ -55,6 +57,8 @@ export default function AddPostPage() {
       );
 
       showAlert({ type: DialogType.SUCCESS, text: "Post Created!" });
+
+      navigate("/", { replace: true, relative: "path" });
     } catch (e) {
       showAlert({ type: DialogType.DANGER, text: "An error occured" });
     } finally {
@@ -68,6 +72,9 @@ export default function AddPostPage() {
         <Link onClick={handleLogout} to={""}>
           Logout
         </Link>
+      </div>
+      <div className="view-posts-btn">
+        <Link to={"/"}>View Posts</Link>
       </div>
       <h2>Add Post</h2>
       <AddPost

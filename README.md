@@ -103,6 +103,21 @@ To run frontend tests, use the following command:
 task run-frontend-tests
 ```
 
+## Step 8: Using the App
+
+1. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+2. On the login page click on the "Register" button.
+3. Enter a simple username, password, and email in the registration form.
+4. Click on the "Register" button to create your account.
+5. If everything went smooth you should be in the Home page where created posts appear.
+6. Click on `Add New Post` button on the top left.
+7. Enter some content in the box and press summarize.
+8. If everything went smooth two more boxes will appear showing the summary and insights that ChatGPT extracted from the content.
+9. Click on `Create` button to create the post.
+10. If everything went smooth you should be redirected to the home page viewing the newely craeted post.
+11. You can press `Logout` to logout.
+12. You can then log in again, using the registered credentials.
+
 The frontend will be accessible at http://localhost:3000.
 
 Appinio is also available at https://appinio.thedevbar.com running on my Kubernetes internal cluster.
