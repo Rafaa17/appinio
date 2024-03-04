@@ -15,7 +15,7 @@ tasks:
   run-db:
     dir: appinio-backend
     cmds:
-    - docker-compose up -d db
+    - docker-compose up db
 
   shape-db:
     dir: appinio-backend
@@ -55,19 +55,9 @@ tasks:
   up-frontend:
     dir: appinio-frontend
     cmds:
-    - docker-compose up -d
-
-  down-frontend:
-    dir: appinio-frontend
-    cmds:
-    - docker-compose down
+    - docker-compose up
 
   up-backend:
     dir: appinio-backend
     cmds:
-    - docker-compose up -d
-
-  down-backend:
-    dir: appinio-backend
-    cmds:
-    - docker-compose down
+    - docker-compose up

@@ -24,14 +24,14 @@ Before you begin, make sure you have the following dependencies installed:
 - [Taskfile](https://taskfile.dev/#/installation) (installed via npm)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (Ensure Docker Desktop is installed and running for hosting the MySQL database in a Docker container)
 
-## Step 2: Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Rafaa17/appinio.git
 cd appinio
 ```
 
-## Step 3: Configure Backend
+### Configure Backend
 
 Adjust the `.env` file inside the `appinio-backend` directory and include the following:
 
@@ -41,9 +41,23 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 Replace `your_openai_api_key_here` with your actual OpenAI API key.
 
-## Step 4: Database Setup
+## Step 2: Running App
 
-### 4.1 Start Database (MySQL in Docker)
+### Running in Docker
+
+```bash
+task up-backend
+```
+
+```bash
+task up-frontend
+```
+
+or
+
+### Running outside Docker (Db still runs in Docker)
+
+### 1. Start Database (MySQL in Docker)
 
 During this step, a Docker container will be started to host a MySQL instance.
 
@@ -59,17 +73,7 @@ To access the database through a client, use the following credentials:
 - **Password:** password
 - **Database:** db
 
-## Step 5: Backend Setup
-
-### One line boot through Docker
-
-```bash
-task up-backend
-```
-
-or locally
-
-### 5.1 Install Backend Dependencies
+### 2. Install Backend Dependencies
 
 ```bash
 # optional - if using nvm
@@ -80,13 +84,13 @@ nvm use
 task install-backend-deps
 ```
 
-### 5.2 Shape Database - init migration
+### 3. Shape Database - init migration
 
 ```bash
 task shape-db
 ```
 
-### 5.3 Run Backend Tests
+### 4. Run Backend Tests
 
 To run backend tests, use the following command:
 
@@ -94,7 +98,7 @@ To run backend tests, use the following command:
 task run-backend-tests
 ```
 
-### 5.4 Run Backend
+### 5. Run Backend
 
 ```bash
 task run-backend
@@ -102,23 +106,13 @@ task run-backend
 
 The backend will be accessible at http://localhost:8080, and the OpenAPI Swagger documentation is available at http://localhost:8080/api.
 
-## Step 6: Frontend Setup
-
-### One line boot through Docker
-
-```bash
-task up-frontend
-```
-
-or locally
-
-### 6.1 Frontend Installation
+### 6. Frontend Installation
 
 ```bash
 task install-frontend-deps
 ```
 
-### 6.2 Run Frontend Tests
+### 7. Run Frontend Tests
 
 To run frontend tests, use the following command:
 
@@ -126,13 +120,13 @@ To run frontend tests, use the following command:
 task run-frontend-tests
 ```
 
-### 6.3 Run Frontend
+### 8. Run Frontend
 
 ```bash
 task run-frontend
 ```
 
-## Step 7: Using the App
+## Step 3: Using the App
 
 1. Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 2. On the login page click on the `Register` button.
